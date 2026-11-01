@@ -1,4 +1,4 @@
-# KineTexture native core preview
+# KineTexture
 
 This header-only C++20 core contains scalar math, dense pose and scalar-track
 sampling, explicit channel/skeleton data and forward kinematics. It has no game, graphics, audio, platform,
@@ -7,12 +7,28 @@ coordinate conversion, bone-frame retarget primitives and analytical two-bone IK
 It does not infer character profiles, contact correction or source-file semantics.
 The API is experimental; no stable binary ABI is provided.
 
-Clean-1 adds [channel semantics](CHANNEL_SEMANTICS.md), including absolute/delta,
+[Channel semantics](CHANNEL_SEMANTICS.md) include absolute/delta,
 missing/explicit zero, timebase and provenance. The independent
 [Python research package](python/README.md) supplies
 irregular ScalarTrack, coordinate/bone-frame retarget primitives and TwoBoneIK;
 Gaku's research converters call these implementations. KineTexture's scope is performance
 representation/evaluation/retargeting across sources and character targets.
+
+## Start here
+
+This repository provides source code. No prebuilt SDK or CLI download is linked
+from this page; the commands below create an installable SDK from a checkout or
+source archive. No adjacent GakuMotion repository or game installation is needed.
+
+- Integrate the C++ library: [build and install the SDK](#build-and-verification),
+  then [consume it from your own project](#use-an-installed-sdk-in-your-own-project).
+- Inspect a `.gkclip` offline: [build and use the native CLI tools](tools/gkclip_export/README.md).
+- Explore the algorithms in Python: see the separate [research package](python/README.md).
+
+The SDK contains headers, a CMake package, documentation and license notices.
+When the optional CLI targets are enabled, installation also includes their
+executables in `bin/`. Keep the SDK prefix intact when copying it to another
+project or machine; the installed-package test checks relocation explicitly.
 
 ## Math and dense sampling
 
@@ -130,6 +146,50 @@ material point to GitHub; `CHANNEL_SEMANTICS.md` is included beside it. Run
 `python tools/check_docs.py` to check maintained links and README consistency;
 run `python tools/check_docs.py --write-installed-readme` after editing this page.
 This documentation tool is a development check, not a native runtime dependency.
+
+## Use an installed SDK in your own project
+
+An SDK consumer does not need this source checkout. In a new project directory,
+create these two files. `KineTexture::Core` supplies its C++20 requirement and
+installed include directory through the exported CMake target.
+
+`CMakeLists.txt`:
+
+```cmake
+cmake_minimum_required(VERSION 3.20)
+project(KineTextureExample LANGUAGES CXX)
+find_package(KineTexture CONFIG REQUIRED)
+add_executable(kinetexture_example main.cpp)
+target_link_libraries(kinetexture_example PRIVATE KineTexture::Core)
+```
+
+`main.cpp`:
+
+```cpp
+#include <KineTexture/KineTexture.hpp>
+#include <cmath>
+
+int main()
+{
+    const auto q = KineTexture::Quaternion::FromEulerDegreesXYZ(0, 0, 90);
+    const auto direction = q.Rotate({1, 0, 0});
+    return std::abs(direction.x) < 1e-5f && std::abs(direction.y - 1) < 1e-5f ? 0 : 1;
+}
+```
+
+From that new project directory, use the absolute `$installPrefix` created by
+the installation step above. If you received an SDK separately, set that variable
+to the directory containing its `include`, `lib` and `share` directories:
+
+```powershell
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release "-DCMAKE_PREFIX_PATH=$installPrefix"
+cmake --build build
+.\build\kinetexture_example.exe
+```
+
+The example exits with code zero after checking a 90-degree rotation. For
+explicit two-bone IK, pole hints and reconstructed FK, follow the standalone
+[two-bone example](examples/two_bone_ik/README.md).
 
 The tests use two self-authored skeletons with different nonidentity rest rotations,
 bone axes, lengths and coordinate declarations; one uses unsorted parents and sparse

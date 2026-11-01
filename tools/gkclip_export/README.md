@@ -7,27 +7,39 @@ weights nor links a model renderer. They are compatibility adapters outside
 
 ## Build
 
-From the repository root with CMake and MSVC available:
+From the repository root in a Visual Studio x64 developer shell with CMake and
+Ninja available:
 
 ```powershell
-cmake -S . -B build/gkclip_export_20261101 -G "Visual Studio 18 2026" -A x64
-cmake --build build/gkclip_export_20261101 --config Release --target gkclip2vmd gkclip2smpl
+cmake -S . -B build/cli -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build/cli
 ```
 
-The executables are in `build/gkclip_export_20261101/Release/`. For other
-installed toolchains, select the corresponding CMake generator. The targets
+The executables are in `build/cli/`. The targets
 build by default; `-DKINETEXTURE_BUILD_GKCLIP_TOOLS=OFF` disables them. CMake
 installation also installs the executables under `bin/`. Core consumers do
 not acquire a dependency on these adapters.
+
+Check the executable entry points without providing a motion file:
+
+```powershell
+.\build\cli\gkclip2vmd.exe --help
+.\build\cli\gkclip2smpl.exe --help
+```
+
+CTest uses generated synthetic clips, so its CLI checks need no private sample
+or external model. Python's standard library is required for that test only.
+The export examples below require your own source clip; `motion.gkclip` is an
+input-path example, not a file shipped in this repository.
 
 ## Export
 
 The following invocations use a local source clip and new output paths:
 
 ```powershell
-build/gkclip_export_20261101/Release/gkclip2vmd.exe motion.gkclip --preset canonical-mmd --body-only --output review.vmd
-build/gkclip_export_20261101/Release/gkclip2smpl.exe motion.gkclip --preset canonical-smpl --body-only --output review_smpl.npz
-build/gkclip_export_20261101/Release/gkclip2smpl.exe motion.gkclip --preset canonical-smplx --body-only --neutral-shape --output review_smplx.npz
+.\build\cli\gkclip2vmd.exe motion.gkclip --preset canonical-mmd --body-only --output review.vmd
+.\build\cli\gkclip2smpl.exe motion.gkclip --preset canonical-smpl --body-only --output review_smpl.npz
+.\build\cli\gkclip2smpl.exe motion.gkclip --preset canonical-smplx --body-only --neutral-shape --output review_smplx.npz
 ```
 
 Each export also creates `OUTPUT.report.json` with the full profile
@@ -50,9 +62,9 @@ another hierarchy (including a common 51-bone variant) needs an edited profile;
 an ignored intermediate track also changes the orientation of its descendants.
 
 Actual-mesh review corrected the MMD leg/foot hinge convention in preset
-`canonical-mmd-approx/2`; SMPL presets are unchanged. A local YYB51 topology
-profile and complete VMD/SMPL-X render comparisons are recorded in the
-[real-render review](../../docs/GKCLIP_OFFLINE_RENDER_REVIEW_20261101.md).
+`canonical-mmd-approx/2`; SMPL presets are unchanged. Model-specific profiles
+and real-model render comparisons are external research artifacts, not bundled
+samples. Use an [explicit frame profile](#explicit-frame-profiles) for another rig.
 Declared motion projection, timing and roots passed their checks; source-pose
 equivalence and contact remain unaccepted. First-version MMD exports should
 not be used as accepted geometry references.
@@ -102,8 +114,8 @@ renderer ignoring the availability mask will display neutral placeholders.
 Write an editable preset and then supply it explicitly:
 
 ```powershell
-build/gkclip_export_20261101/Release/gkclip2vmd.exe --preset canonical-mmd --write-profile review.profile
-build/gkclip_export_20261101/Release/gkclip2vmd.exe motion.gkclip --profile review.profile --body-only --output review_bound.vmd
+.\build\cli\gkclip2vmd.exe --preset canonical-mmd --write-profile review.profile
+.\build\cli\gkclip2vmd.exe motion.gkclip --profile review.profile --body-only --output review_bound.vmd
 ```
 
 Profiles are development adapter configuration, not a new motion distribution
@@ -163,8 +175,8 @@ matching rig/model evidence. A successful export does not certify them.
 Build all tests and run CTest:
 
 ```powershell
-cmake --build build/gkclip_export_20261101 --config Release
-ctest --test-dir build/gkclip_export_20261101 -C Release --output-on-failure
+cmake --build build/cli
+ctest --test-dir build/cli --output-on-failure
 ```
 
 Native tests independently inspect VMD fields and NPZ/NPY records and compare

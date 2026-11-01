@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "source_head": "29b2387f3b608b76457157b9cc706bf81a7029ed",
+  "review_manifest_sha256": "68eaba23328a475e3d1577f2f243e1c8935440e2d0810021f3fd10e5ac0bccff",
+  "original_release_receipt_sha256": "f8b00961c05df372aa27b37eb2498d5f70df3595fe01712f8078a82f0a169de2",
+  "copy_mode": "Explicit reviewed entries only; no development repository copy",
+  "payload": [
+    {
+      "path": ".github/workflows/windows-native.yml",
+      "sha256": "a713e148c96f81648571a9874b403363057ab49f0caf39c5ab36a56508ee4318"
+    },
+    {
+      "path": "CHANNEL_SEMANTICS.md",
+      "sha256": "083025a40698d91d7178241bb646d18df5c78fe19ad9d65e0f0c24defcb564b7"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "b45fb9ca3140efbbfd4208c4f3d738470f4c88d92b14729b7a92cad8ac16269b"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "85a9cc31a652274a17ec800a9fbd047366f970c3e342a5af0e65fc6e32cc7d95"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a8cd1d2c855e5979c8f9084a411908d59378683adc54c14f99f7157c49d9a7aa"
+    },
+    {
+      "path": "docs/NATIVE_MIGRATION_20261101.md",
+      "sha256": "f9accd2e01406877ca8e015351b62b2c7e2f3a7945960b6556737e9ea14fae33"
+    },
+    {
+      "path": "docs/SOURCE_PROVENANCE_REVIEW_20261101.md",
+      "sha256": "3ef5447fb1c5b718bef1c8d2c53ce72b70d97a1edea50914d7d40a3028cd9f51"
+    },
+    {
+      "path": "examples/two_bone_ik/CMakeLists.txt",
+      "sha256": "23d65aaa5513b458a93a173a078b884ee58d09e389383d7c668f4062f7ed4a17"
+    },
+    {
+      "path": "examples/two_bone_ik/README.md",
+      "sha256": "f60483270a81d27fdb2943a9ca1dd5b0fd5fbac374b1275f28470a2f9b7fec26"
+    },
+    {
+      "path": "examples/two_bone_ik/main.cpp",
+      "sha256": "d9e161115e8e8e270976bfacd9b200e8dfddcf9ec76b72c95077fbf4a8e356d6"
+    },
+    {
+      "path": "python/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "python/NOTICE",
+      "sha256": "1e80f417dbca095f7535b560984fe9a670ae970f84931d12fb9ebc7493320067"
+    },
+    {
+      "path": "python/README.md",
+      "sha256": "7b6062e04ca586422c0863c1bfa7db90e479162ffc8b4537a33d800847e587fc"
+    },
+    {
+      "path": "python/pyproject.toml",
+      "sha256": "a2b6205704624a4f9ae5cb71eed0d4b7fcd77c9b151d622aa5efb3925ec95943"
+    },
+    {
+      "path": "python/src/kinetexture/__init__.py",
+      "sha256": "ec3bc6b5cebf044c24a4aa6e40baf9e7a98eaa638e0446a309d1d0b7b1c8ff1b"
+    },
+    {
+      "path": "python/src/kinetexture/ik.py",
+      "sha256": "7f14e190e5dfea62a89c1a8f868bb449b69380efd650d5222bf1bf89c449238a"
+    },
+    {
+      "path": "python/src/kinetexture/retarget.py",
+      "sha256": "41ac569d82b024048c6e3aba82f972425f48c7639b24efe3ad111628e4e61d89"
+    },
+    {
+      "path": "python/src/kinetexture/scalar.py",
+      "sha256": "0ce6d3275c7cc7734d3a363ff212f097a056bc79a5e3eeb64f0850b3a6f46a85"
+    },
+    {
+      "path": "python/src/kinetexture/semantics.py",
+      "sha256": "ca58fdba2949662412088b50ee09d6ded5219ea9c0b9f1019f7a81f296a59f1f"
+    },
+    {
+      "path": "release_receipt.json",
+      "sha256": "f8b00961c05df372aa27b37eb2498d5f70df3595fe01712f8078a82f0a169de2"
+    },
+    {
+      "path": "src/KineTexture/CHANNEL_SEMANTICS.md",
+      "sha256": "083025a40698d91d7178241bb646d18df5c78fe19ad9d65e0f0c24defcb564b7"
+    },
+    {
+      "path": "src/KineTexture/Channels.hpp",
+      "sha256": "6fa3c2a3cfa136303425cdcca2ff19aa8dcd0080961d3df477c98ff0d77cf4a3"
+    },
+    {
+      "path": "src/KineTexture/KineTexture.hpp",
+      "sha256": "9c9eb0675567a549de18070cec8608f17318a7a07cbee77efbac0c9d10a63702"
+    },
+    {
+      "path": "src/KineTexture/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/KineTexture/Math.hpp",
+      "sha256": "3917d2ac57ff5c81d413381e11696fd21646b6e04225368e58e9150934c29f8c"
+    },
+    {
+      "path": "src/KineTexture/NOTICE",
+      "sha256": "85a9cc31a652274a17ec800a9fbd047366f970c3e342a5af0e65fc6e32cc7d95"
+    },
+    {
+      "path": "src/KineTexture/Pose.hpp",
+      "sha256": "d2680cea2d20a7cdbe70a7e6b654d4fe83678dbaa303d2ba7f9f7cecb225def4"
+    },
+    {
+      "path": "src/KineTexture/README.md",
+      "sha256": "3300a24ae2c74447d915fe9a47f8c6ee3478bc11d5bc8695459f1d0136977992"
+    },
+    {
+      "path": "src/KineTexture/Retarget.hpp",
+      "sha256": "81ee19d0f223381c6abafb218dc63f6866668491d24f4b8ed504411dffedfb34"
+    },
+    {
+      "path": "src/KineTexture/Sampling.hpp",
+      "sha256": "8f3621775dfe2ddac3f81e390a6b64d6664a71d070e248ac64e124d15a4b0072"
+    },
+    {
+      "path": "src/KineTexture/ScalarTrack.hpp",
+      "sha256": "0bbb685d43a0c64925fa8119ebdc84077894e6a1d47071a2bae05ca3448d7921"
+    },
+    {
+      "path": "src/KineTexture/TwoBoneIK.hpp",
+      "sha256": "7b06e82c09fa69210e4157fbae6438e57ca7cdf9504251a59f5158ba71a91741"
+    },
+    {
+      "path": "src/KineTexture/cmake/KineTextureConfig.cmake.in",
+      "sha256": "10e45e16c4aca0f88c18ee7f8dc172f5817c7dc209730361b2d0115883de437d"
+    },
+    {
+      "path": "tests/compare_native_research.py",
+      "sha256": "35ce21c357e8c9c39eff05e17094eff4852b745829f4ad1fba84abc3b9407051"
+    },
+    {
+      "path": "tests/consumer/CMakeLists.txt",
+      "sha256": "8f15e58be35a6c7f722c3c66e151a8861c54dd9c475b9cc9d40f1254b08e669d"
+    },
+    {
+      "path": "tests/consumer/main.cpp",
+      "sha256": "9033e7e68965fe8d168b844eea8dc02e742494b4edd0d1a2f598a0f4bd7a85d9"
+    },
+    {
+      "path": "tests/python_consumer.py",
+      "sha256": "8a866d41f00d3d9126ce9b88b13d685c5328e360f4aaead3e4040435b5ac14ca"
+    },
+    {
+      "path": "tests/test_clean1.cpp",
+      "sha256": "68abfe99ad25d934243a670f48e36ec5eda8f8c47418466303bfa9c7e91b4ff9"
+    },
+    {
+      "path": "tests/test_core.cpp",
+      "sha256": "d9c790af55ee46756f48cebe13835cdff93a0e207941b354b48b9ee88210a4be"
+    },
+    {
+      "path": "tests/test_gkclip_adapter.cpp",
+      "sha256": "907b6154ca2ba077d92bd88811582969a06136b085fcc33b79eca74162f42266"
+    },
+    {
+      "path": "tests/test_gkclip_cli.py",
+      "sha256": "77f26ee8eb3f5dcbd347d55cc6704dedd94938a35a9be74d1e36847336b22e08"
+    },
+    {
+      "path": "tests/test_gkclip_presets.cpp",
+      "sha256": "b8941627995c382b132af24e7eb9fae76a22ca2685f2966aaec68634d199a9a0"
+    },
+    {
+      "path": "tests/test_gkclip_vmd.cpp",
+      "sha256": "04a8868af0206c48040a36cc5cff1cef0e5e53604227e5967635bf5fa3909705"
+    },
+    {
+      "path": "tests/test_native.cpp",
+      "sha256": "a8f22697bdb86956234c4a2d8e5bbefde5db7b5836cc571150ff7c8bef650e45"
+    },
+    {
+      "path": "tests/test_smpl_export.cpp",
+      "sha256": "cc4a3038bd8f33938b6df86b0cba9e0209edf1e8823ae52f6267e0482734c737"
+    },
+    {
+      "path": "tests/verify_installed_consumer.cmake",
+      "sha256": "d43e23f2d15e81f7bba35b2b983c28c4690e4b56fdb2bbe5e54528697814fe85"
+    },
+    {
+      "path": "tools/check_docs.py",
+      "sha256": "a26dfc0653e2502ffb15da8ee7f8863d6c63224ab6f6fe617d977835f7400287"
+    },
+    {
+      "path": "tools/gkclip_export/Clip.hpp",
+      "sha256": "26195890e374e32c0b8b58ce6b10021c5e5021b7f3ca729cc0c6fdc2eb79f877"
+    },
+    {
+      "path": "tools/gkclip_export/Presets.hpp",
+      "sha256": "0bdc362c891a441f797cda97f74e507f3942afcfbe1904a4fc6b8f49a00dc740"
+    },
+    {
+      "path": "tools/gkclip_export/Profiles.hpp",
+      "sha256": "24ef9ea9b36244d3121462f262ad49efd1c436df2135aaefbaa9891778aa1dc6"
+    },
+    {
+      "path": "tools/gkclip_export/README.md",
+      "sha256": "b594f2067e0ba7f7940d9fbedec82f09c1fe5846d9232b32eee904bdad43c8fc"
+    },
+    {
+      "path": "tools/gkclip_export/SmplWriter.hpp",
+      "sha256": "4b4a1584867bc83afc7467cd5d33a4562e4a982ba18bcf980cfd57e363e4fa8f"
+    },
+    {
+      "path": "tools/gkclip_export/VmdWriter.hpp",
+      "sha256": "9df09a00e22ad8db65b673aa62ce966ea5c43bc59ff24aaddbb4b1664a8c5d19"
+    },
+    {
+      "path": "tools/gkclip_export/main.cpp",
+      "sha256": "5e40d957d2942d3d6cc0e6dd7ff9f297f15a588e6ada6387e97400ee2061b470"
+    },
+    {
+      "path": "tools/kinetexture_release/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "tools/kinetexture_release/NOTICE",
+      "sha256": "85a9cc31a652274a17ec800a9fbd047366f970c3e342a5af0e65fc6e32cc7d95"
+    },
+    {
+      "path": "tools/kinetexture_release/README.md",
+      "sha256": "23743af906bc3ece4c51942529313d4ce620a398bb7bf174b8a59a875067b2e5"
+    },
+    {
+      "path": "tools/kinetexture_release/REVIEW_NOTICE.md",
+      "sha256": "20407a45dce97ca4dce01fdd3d10788f8ba67c9742f8cde04c6993de262c3337"
+    },
+    {
+      "path": "tools/kinetexture_release/build-requirements.txt",
+      "sha256": "5dd35b425859ba4a66afdb4d80e670694fb5ce7d17c342a672f6e6e175595acd"
+    },
+    {
+      "path": "tools/kinetexture_release/prepare_preview.py",
+      "sha256": "e77e069bffc8f6884400776c13a8f3c7f86e667519ab063dcd08882f3fda5eab"
+    },
+    {
+      "path": "tools/kinetexture_release/pyproject.toml",
+      "sha256": "59b0e33300b1f85b85b7586c72b32ea205f12792e5f360e9eb87738096cb8da5"
+    },
+    {
+      "path": "tools/kinetexture_release/src/kinetexture_release/__init__.py",
+      "sha256": "9b096a366aa90223d213febb7949cc89afcabbc8573f042ed25d463f80f9dfef"
+    },
+    {
+      "path": "tools/kinetexture_release/src/kinetexture_release/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "tools/kinetexture_release/src/kinetexture_release/cli.py",
+      "sha256": "a5e2ad2ae1f25b03cb8dfaa8df36b79c836a0985ed9644ee8dd043a6fda92be8"
+    },
+    {
+      "path": "tools/kinetexture_release/src/kinetexture_release/exporter.py",
+      "sha256": "3dfd5d33ce2c7817ce932937b0ae8b9aca3242e2330425cd0aea15d7fd5f64ed"
+    },
+    {
+      "path": "tools/kinetexture_release/tests/test_preview_manifest.py",
+      "sha256": "8ce4fb0c2b61edc37d0963697bc09f8f04fd5f72052302a3fc30d2896e1eef33"
+    },
+    {
+      "path": "tools/kinetexture_release/verify_clean_install.py",
+      "sha256": "383b3c535f447a475444700ce550d9db16c0e1b4c55991674c276845d83e77a8"
+    },
+    {
+      "path": "tools/kinetexture_vmd/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "tools/kinetexture_vmd/NOTICE",
+      "sha256": "85a9cc31a652274a17ec800a9fbd047366f970c3e342a5af0e65fc6e32cc7d95"
+    },
+    {
+      "path": "tools/kinetexture_vmd/README.md",
+      "sha256": "85d98ac58c60e808b2c31c180384bf07a23f11c8acb4a6ba1055cc62b8db8e3d"
+    },
+    {
+      "path": "tools/kinetexture_vmd/build-requirements.txt",
+      "sha256": "5dd35b425859ba4a66afdb4d80e670694fb5ce7d17c342a672f6e6e175595acd"
+    },
+    {
+      "path": "tools/kinetexture_vmd/pyproject.toml",
+      "sha256": "76493bfa4150fe22febc65277f5bf3aa26a0669da5251721e3e14088ae76f0a0"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/__init__.py",
+      "sha256": "912e8a547e5a571456afe417ef2db55d66bf44041e33d17221f5f083c469895b"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/cli.py",
+      "sha256": "66e122398b11d0237c7f86a5c763c2fcdb1f1fce6c180f2fb36f4c8a6b74a72c"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/fixture.py",
+      "sha256": "6aac7f7989da6401b16dea50aa0264ac60ba7f2306c4465346eedd89e4af2767"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/gkclip_compat.py",
+      "sha256": "ba29b177a4fe48c3448c97f2c9067dab36335d21fdf5a3973ac307374bd3abfc"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/parser.py",
+      "sha256": "3654a3ed5d2275fbee94ba1ba2b56ea0d5157f0c88423b98a7b57bba6a43f3c0"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/profiles.py",
+      "sha256": "5b605329cbfe44337d21c0897c1767cc94d2ce93f54ae4d15d7b6fe9d0c5c5dc"
+    },
+    {
+      "path": "tools/kinetexture_vmd/src/kinetexture_vmd/sampling.py",
+      "sha256": "03b86ad39a229f3f201aef453c1c6374e04236231437c8820cc8679acc2dc06a"
+    }
+  ],
+  "staging_additions": [
+    {
+      "path": ".gitattributes",
+      "sha256": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "4d31bb017cc00ad5014e7640e2276d03e11853c2b109cfe421eef0573473039b"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "58de609b2395a4e819280d0a55cb9da9d1de87e87cc8475b118c3986ff918bd1"
+    },
+    {
+      "path": "STAGING.md",
+      "sha256": "978654879acb969abd6b1fef9303b8bd7f04e415225828f14f4424daee62f948"
+    },
+    {
+      "path": "tools/kinetexture_release/reviewed_preview_manifest.json",
+      "sha256": "68eaba23328a475e3d1577f2f243e1c8935440e2d0810021f3fd10e5ac0bccff"
+    }
+  ],
+  "self_hash_note": "This self-describing hash list excludes its own recursive hash. Git identifies it."
+}

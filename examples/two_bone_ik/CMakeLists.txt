@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(KineTextureTwoBoneExample LANGUAGES CXX)
+find_package(KineTexture CONFIG REQUIRED)
+add_executable(kinetexture_two_bone_ik main.cpp)
+target_link_libraries(kinetexture_two_bone_ik PRIVATE KineTexture::Core)
+include(CTest)
+add_test(NAME kinetexture.example.two_bone_ik COMMAND kinetexture_two_bone_ik)

@@ -1,0 +1,22 @@
+name: Windows native core
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  msvc:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Configure dependency-free core
+        run: cmake -S . -B build/ci -G "Visual Studio 17 2022" -A x64 -DKINETEXTURE_BUILD_GKCLIP_TOOLS=OFF
+      - name: Build
+        run: cmake --build build/ci --config Release --parallel
+      - name: Native suites and relocated installed consumers
+        run: ctest --test-dir build/ci -C Release --output-on-failure
+      - name: Maintained documentation and installed README
+        run: python tools/check_docs.py

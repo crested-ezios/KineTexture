@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(KineTextureInstalledConsumer LANGUAGES CXX)
+find_package(KineTexture CONFIG REQUIRED)
+add_executable(kinetexture_installed_consumer main.cpp)
+target_link_libraries(kinetexture_installed_consumer PRIVATE KineTexture::Core)
+include(CTest)
+add_test(NAME kinetexture.installed_consumer COMMAND kinetexture_installed_consumer)

@@ -1,0 +1,11 @@
+KineTexture Clean-1 local candidate
+
+The scalar interpolation, bone-frame decomposition and two-bone solver were
+extracted from GakuMotion source at ef0e91e13b367089130ea304b7c7a9a1b0441804.
+Explicit channel contracts and generic retarget interfaces were added here.
+The source history remains in the local repository.
+
+This package bundles no game profile, model, captured dataset, motion or audio.
+NumPy and SciPy are external dependencies under their respective licenses.
+This local candidate is not the previously reviewed 20261019 public receipt;
+public distribution requires a new file-level review and exact receipt.

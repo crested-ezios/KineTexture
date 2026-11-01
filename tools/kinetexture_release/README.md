@@ -79,12 +79,18 @@ The manifest is outside its own payload. The copied script can therefore have a
 fixed reviewed hash without a self-reference cycle. The receipt embeds the
 complete supplied manifest and its SHA256; archive that digest independently.
 
-After the frozen manifest has been written by the reviewer, run these commands
-from the repository root. A new output label is required for each candidate:
+The original `reviewed_preview_manifest.json` remains the frozen historical
+record. The maintained SDK/CLI documentation is recorded separately in
+`maintained_docs_manifest_20261101.json`; use that explicit manifest for this
+checkout. The original default correctly rejects the changed documentation
+rather than silently updating its recorded hashes.
+
+Run these commands from the repository root. A new output label is required for
+each candidate:
 
 ```powershell
-python tools/kinetexture_release/prepare_preview.py --check
-python tools/kinetexture_release/prepare_preview.py --output build/reviewed-source-preview
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_manifest_20261101.json --check
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_manifest_20261101.json --output build/reviewed-source-preview
 python -m unittest discover -s tools/kinetexture_release/tests -p test_preview_manifest.py -v
 ```
 

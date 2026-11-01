@@ -7,10 +7,12 @@ keep builds, SDKs, test output and temporary assets under ignored build paths or
 outside this repository. Use the supplied synthetic tests rather than game files.
 
 The original release_receipt.json and reviewed_preview_manifest.json are retained
-verbatim. They bind reviewed bytes; do not silently refresh their hashes after
-editing frozen source. A changed payload needs an explicit new source review and
-manifest. Staging metadata is listed separately and grants no new distribution
-rights. Preserve all license and provenance notices.
+verbatim. They bind historical reviewed bytes; do not silently refresh their
+hashes after editing source. The four-document follow-up is explicitly recorded
+in docs/SDK_FIRST_USE_20261101.md and the separate maintained_docs_manifest_20261101.json
+under tools/kinetexture_release/. Use the explicit manifest command in STAGING.md
+for the maintained checkout. Staging metadata is listed separately and grants
+no new distribution rights. Preserve all license and provenance notices.
 
 This source snapshot does not require sibling development repositories, links,
 game installation, model weights, real clips or Python numerical packages for

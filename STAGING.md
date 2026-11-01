@@ -1,6 +1,6 @@
 # Standalone KineTexture source staging
 
-This local source-only snapshot contains the exact 80 reviewed payload files,
+This repository started from the exact 80 reviewed payload files,
 the original release receipt, and a copy of the frozen review manifest. The
 source review is [included here](docs/SOURCE_PROVENANCE_REVIEW_20261101.md).
 No game files, motions, music, model weights, render caches or built DLLs were
@@ -13,24 +13,32 @@ the frozen manifest SHA256 is
 `68eaba23328a475e3d1577f2f243e1c8935440e2d0810021f3fd10e5ac0bccff`.
 The original receipt SHA256 is
 `f8b00961c05df372aa27b37eb2498d5f70df3595fe01712f8078a82f0a169de2`.
-The current staging commit is a new repository checkpoint, rather than a rewrite
-of that reviewed source identity.
+The original records retain that reviewed source identity. A later
+[documentation follow-up](docs/SDK_FIRST_USE_20261101.md) changes only the root
+README, its generated installed copy, the native CLI guide and the release-tool
+guide's current manifest commands. The other 76
+payload files retain their original reviewed hashes. The current documentation
+projection uses the separate manifest
+`tools/kinetexture_release/maintained_docs_manifest_20261101.json`; the original
+manifest and receipt above remain byte-for-byte historical evidence.
 
 The copied manifest is intentionally outside the original 80-file payload at
 `tools/kinetexture_release/reviewed_preview_manifest.json`. The original receipt
 describes the exact exported package; this Git repository additionally contains
 Git metadata and the explicitly recorded staging files. Validate its frozen
-source projection from this repository root with:
+current source projection from this repository root with:
 
 ```powershell
-python tools/kinetexture_release/prepare_preview.py --check
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_manifest_20261101.json --check
 ```
 
 That read-only command needs no neighboring development checkout. Do not apply
 the exact-output verifier to the whole Git root, which has deliberate additional
 metadata; the source checker verifies the explicitly reviewed payload instead.
 The complete source preview can be independently exported to a new ignored build
-directory using the included tool and unchanged copied manifest.
+directory using the included tool and that explicit maintenance manifest. The
+old default manifest intentionally rejects the changed documents; it is
+not silently refreshed or presented as a current successful check.
 
 For native build/tests, use a Visual Studio x64 developer shell with MSVC,
 CMake 3.20+, Ninja and Python available:

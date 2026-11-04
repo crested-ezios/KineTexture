@@ -78,6 +78,18 @@ int main(int argc,char** argv)
             Check(bytes.at(controls+axis)==20 && bytes.at(controls+axis+4)==20 &&
                 bytes.at(controls+axis+8)==107 && bytes.at(controls+axis+12)==107,
                 "each coordinate and rotation Bezier curve is linear");
+            // Independent consumer layout used by mmd_tools: separate
+            // 16-byte X/Y/Z/rotation blocks, rather than only the first block.
+            const auto block=controls+axis*16;
+            Check(bytes.at(block)==20 && bytes.at(block+4)==20 &&
+                bytes.at(block+8)==107 && bytes.at(block+12)==107,
+                "every redundant consumer block has diagonal linear controls");
+            for (int byte=0;byte<16;++byte)
+            {
+                const int original=byte+axis;
+                const auto expected=original<8 ? 20 : original<16 ? 107 : 0;
+                Check(bytes.at(block+byte)==expected,"redundant block retains its complete shifted first-block suffix");
+            }
         }
         reader.offset+=64;
     }

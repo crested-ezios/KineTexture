@@ -170,6 +170,13 @@ motion discontinuities offline. Character geometry, contact, skinning,
 game facial policy, physics and in-game visual quality require their own
 matching rig/model evidence. A successful export does not certify them.
 
+## VMD interpolation update
+
+The 2026-11-04 writer fills all four redundant VMD interpolation blocks with
+linear controls. This corrects Z translation and rotation between authored keys
+in readers that use those blocks. Key values, timestamps and the output format
+are unchanged. Regenerate affected VMD exports with the updated CLI.
+
 ## Verification
 
 Build all tests and run CTest:

@@ -75,6 +75,9 @@ joint 7 0 7370696e65 0 0 0 1 0 0 0 1
         offset = 54 + 111*i
         name = data[offset:offset+15].split(b"\0")[0].decode("ascii")
         frame, *values = struct.unpack_from("<I7f", data, offset+15)
+        controls = data[offset+47:offset+111]
+        for block in range(4):
+            assert tuple(controls[block*16+j] for j in (0,4,8,12)) == (20,20,107,107)
         tracks.setdefault(name, []).append((frame, values))
     assert [k[0] for k in tracks["root"]] == [0, 1, 2]
     # 30fps grid: source frames 0,4,endpoint5. Root scale is NOT reapplied.

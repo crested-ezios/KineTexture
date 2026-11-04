@@ -17,10 +17,18 @@ The original records retain that reviewed source identity. A later
 [documentation follow-up](docs/SDK_FIRST_USE_20261101.md) changes only the root
 README, its generated installed copy, the native CLI guide and the release-tool
 guide's current manifest commands. The other 76
-payload files retain their original reviewed hashes. The current documentation
+payload files retain their original reviewed hashes. That historical documentation
 projection uses the separate manifest
 `tools/kinetexture_release/maintained_docs_manifest_20261101.json`; the original
 manifest and receipt above remain byte-for-byte historical evidence.
+
+The current source projection additionally includes the VMD interpolation fix
+from source commit `2ee74ce5e28ae235a78fe0527c9cbe01cc34e163`: only the writer and
+its two synthetic tests were selected. The CLI guide explains the corrected
+interpolation; the scoped source review records the selection. No research
+report, model/profile data or later research commit was imported. This projection
+uses `tools/kinetexture_release/maintained_source_manifest_20261104.json`; both
+earlier manifests and the original receipt are preserved.
 
 The copied manifest is intentionally outside the original 80-file payload at
 `tools/kinetexture_release/reviewed_preview_manifest.json`. The original receipt
@@ -29,7 +37,7 @@ Git metadata and the explicitly recorded staging files. Validate its frozen
 current source projection from this repository root with:
 
 ```powershell
-python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_manifest_20261101.json --check
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_source_manifest_20261104.json --check
 ```
 
 That read-only command needs no neighboring development checkout. Do not apply
@@ -37,7 +45,7 @@ the exact-output verifier to the whole Git root, which has deliberate additional
 metadata; the source checker verifies the explicitly reviewed payload instead.
 The complete source preview can be independently exported to a new ignored build
 directory using the included tool and that explicit maintenance manifest. The
-old default manifest intentionally rejects the changed documents; it is
+old default manifest intentionally rejects the maintained source; it is
 not silently refreshed or presented as a current successful check.
 
 For native build/tests, use a Visual Studio x64 developer shell with MSVC,
@@ -60,7 +68,7 @@ ctest --test-dir build/two_bone_ik --output-on-failure
 The default build enables the development CLI targets and nine CTest entries;
 installed-package consumption is also checked in a relocated prefix. A native
 core application needs the installed headers/package, not Python research tools.
-See the unchanged README and channel semantics for API contracts and limits.
+See the README and channel semantics for API contracts and limits.
 
 `.gitattributes` disables text conversion to preserve the reviewed raw bytes;
 only this new repository's local `core.autocrlf=false` is set. Build output is

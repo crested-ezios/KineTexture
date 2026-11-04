@@ -119,13 +119,15 @@ namespace KineTexture::GkExport
         VmdDetail::Field(out,"Vocaloid Motion Data 0002",30);
         VmdDetail::Field(out,animation.model_name_cp932,20);
         VmdDetail::U32(out,static_cast<std::uint32_t>(count));
-        // Four coordinate/rotation curves, all linear. The redundant VMD
-        // blocks follow the same diagonal controls as the first block.
+        // Four coordinate/rotation curves, all linear. Each redundant block
+        // is the first 16 bytes shifted left by the block index, then padded.
+        // Consumers also read controls at block*16 + {0,4,8,12}; truncating
+        // the trailing 107s makes Z/rotation nonlinear between authored keys.
         constexpr std::array<std::uint8_t,64> linear{{
             20,20,20,20,20,20,20,20,107,107,107,107,107,107,107,107,
-            20,20,20,20,20,20,20,107,107,107,107,107,107,107,0,0,
-            20,20,20,20,20,20,107,107,107,107,107,107,0,0,0,0,
-            20,20,20,20,20,107,107,107,107,107,0,0,0,0,0,0}};
+            20,20,20,20,20,20,20,107,107,107,107,107,107,107,107,0,
+            20,20,20,20,20,20,107,107,107,107,107,107,107,107,0,0,
+            20,20,20,20,20,107,107,107,107,107,107,107,107,0,0,0}};
         for (const auto& track:animation.bones)
         {
             Quaterniond previous{};

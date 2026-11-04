@@ -148,6 +148,32 @@ notice hash is `85a9cc31a652274a17ec800a9fbd047366f970c3e342a5af0e65fc6e32cc7d95
 The follow-up installed SDK is checked against its final exported source
 notice; the earlier fixed-86 installation evidence remains historical evidence.
 
+## Scoped VMD interpolation follow-up, 2026-11-04
+
+The independent staging baseline is
+`3aeffcb36960d6fe035b312bb51673f0956a13fc`. This follow-up selects exactly
+`tools/gkclip_export/VmdWriter.hpp`, `tests/test_gkclip_vmd.cpp` and
+`tests/test_gkclip_cli.py` from source commit
+`2ee74ce5e28ae235a78fe0527c9cbe01cc34e163`. The original 80-file source baseline
+remains `29b2387f3b608b76457157b9cc706bf81a7029ed`.
+
+Codex read the three-file patch in full. Six interpolation-control bytes per VMD
+key change from zero to 107 so every redundant X/Y/Z/rotation block contains
+linear controls. The C++ test checks the complete shifted blocks; the CLI test
+independently reads their control points from exported bytes. This is a bounded
+serialization correction: key values, frame indices, math APIs and dependencies
+are unchanged. The retained Apache-2.0 and compatibility-source MIT notices apply
+without modification. All three files match the selected source Git blobs.
+
+The CLI guide gains a short public explanation; the release guide names the new
+explicit manifest. No roundtrip report, real asset, fitted profile, offline
+analysis/fairing worker or later research commit is selected. The new
+`maintained_source_manifest_20261104.json` retains each earlier review and binds
+the changed bytes to this scoped review. Original frozen manifests and the
+original `release_receipt.json` remain historical evidence. Fresh build, test,
+SDK and ZIP results are recorded separately in `VALIDATION_20261104.md` and the
+workspace validation receipt.
+
 ## Retained GakuMotion compatibility-source notice
 
 Preserve this notice with a local source preview containing the compatibility adaptation described above.

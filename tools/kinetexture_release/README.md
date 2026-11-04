@@ -80,17 +80,18 @@ fixed reviewed hash without a self-reference cycle. The receipt embeds the
 complete supplied manifest and its SHA256; archive that digest independently.
 
 The original `reviewed_preview_manifest.json` remains the frozen historical
-record. The maintained SDK/CLI documentation is recorded separately in
-`maintained_docs_manifest_20261101.json`; use that explicit manifest for this
-checkout. The original default correctly rejects the changed documentation
-rather than silently updating its recorded hashes.
+record. The earlier maintained SDK/CLI documentation remains recorded in
+`maintained_docs_manifest_20261101.json`. The current projection uses
+`maintained_source_manifest_20261104.json`, which additionally records the scoped
+VMD interpolation fix and its two synthetic tests. Earlier manifests correctly
+reject the maintained bytes rather than silently updating their recorded hashes.
 
 Run these commands from the repository root. A new output label is required for
 each candidate:
 
 ```powershell
-python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_manifest_20261101.json --check
-python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_manifest_20261101.json --output build/reviewed-source-preview
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_source_manifest_20261104.json --check
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_source_manifest_20261104.json --output build/reviewed-source-preview
 python -m unittest discover -s tools/kinetexture_release/tests -p test_preview_manifest.py -v
 ```
 

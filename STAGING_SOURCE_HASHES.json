@@ -382,28 +382,64 @@
   },
   "current_staging_metadata": [
     {
-      "path": "AGENTS.md",
-      "sha256": "f38a08afe45a428f1fdf7b51e220ff914a1a0704e28005c074e5d83700f5b952"
-    },
-    {
-      "path": "STAGING.md",
-      "sha256": "7b82464b433f58ce9086760750484565de4089454ba48f644f3af7fd2428b524"
-    },
-    {
-      "path": "docs\\SDK_FIRST_USE_20261101.md",
-      "sha256": "d0dbd8804905b987093b5f87895248ccb40b713b27b8d8a343ef02c2251f757b"
-    },
-    {
-      "path": "tools\\kinetexture_release\\maintained_docs_manifest_20261101.json",
-      "sha256": "227eb229229bccd5136cdd089af0bf93c96caa71ea7ee867a0269b8e9941b3a0"
+      "path": ".gitattributes",
+      "sha256": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d"
     },
     {
       "path": ".gitignore",
       "sha256": "4d31bb017cc00ad5014e7640e2276d03e11853c2b109cfe421eef0573473039b"
     },
     {
-      "path": ".gitattributes",
-      "sha256": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d"
+      "path": "AGENTS.md",
+      "sha256": "ffb6dbaa8d64d8d89ef16af27a8c1140a406cf2a4e3de2701f7e9489e38a7c23"
+    },
+    {
+      "path": "STAGING.md",
+      "sha256": "1e04de9797713d1115e9206c1f16549589cb5c1d7d9ceccd535ebb18cca01984"
+    },
+    {
+      "path": "docs/SDK_FIRST_USE_20261101.md",
+      "sha256": "d0dbd8804905b987093b5f87895248ccb40b713b27b8d8a343ef02c2251f757b"
+    },
+    {
+      "path": "tools/kinetexture_release/maintained_docs_manifest_20261101.json",
+      "sha256": "227eb229229bccd5136cdd089af0bf93c96caa71ea7ee867a0269b8e9941b3a0"
+    },
+    {
+      "path": "tools/kinetexture_release/maintained_source_manifest_20261104.json",
+      "sha256": "5b1c4c7b392d4f64838e39c954e4d51ebadafcf60b0c021974778f3493ac0ff9"
+    },
+    {
+      "path": "VALIDATION_20261104.md",
+      "sha256": "544038d24cbec269063a75e2f1240f8a849ea2dca79aa25129a6db1d336db636"
     }
-  ]
+  ],
+  "source_maintenance": {
+    "date": "2026-11-04",
+    "source_payload_commit": "b5d3f76916f18d6bf953f8229cb9cd4c9d58832f",
+    "staging_base_commit": "3aeffcb36960d6fe035b312bb51673f0956a13fc",
+    "selected_source_commit": "2ee74ce5e28ae235a78fe0527c9cbe01cc34e163",
+    "selected_source_paths": [
+      "tests/test_gkclip_cli.py",
+      "tests/test_gkclip_vmd.cpp",
+      "tools/gkclip_export/VmdWriter.hpp"
+    ],
+    "maintained_documentation_paths": [
+      "docs/SOURCE_PROVENANCE_REVIEW_20261101.md",
+      "tools/gkclip_export/README.md",
+      "tools/kinetexture_release/README.md"
+    ],
+    "active_manifest": "tools/kinetexture_release/maintained_source_manifest_20261104.json",
+    "active_manifest_sha256": "5b1c4c7b392d4f64838e39c954e4d51ebadafcf60b0c021974778f3493ac0ff9",
+    "prior_manifest_preserved": true,
+    "original_manifest_preserved": true,
+    "original_receipt_preserved": true,
+    "unchanged_prior_payload_count": 74,
+    "unchanged_original_payload_count": 72,
+    "excluded": [
+      "source roundtrip/research reports",
+      "later offline analysis/fairing commits",
+      "real assets or fitted profiles"
+    ]
+  }
 }

@@ -1,3 +1,5 @@
+[简体中文](README.zh-CN.md) | **English**
+
 # KineTexture
 
 This header-only C++20 core contains scalar math, dense pose and scalar-track
@@ -15,6 +17,10 @@ Gaku's research converters call these implementations. KineTexture's scope is pe
 representation/evaluation/retargeting across sources and character targets.
 
 ## Start here
+
+KineTexture is an SDK and a set of offline tools. It is not a GakuLoader plugin;
+there is no KineTexture DLL to install into the game or its `plugins/` directory.
+GakuMotion packages carry the matching core headers at build time.
 
 This repository provides source code. No prebuilt SDK or CLI download is linked
 from this page; the commands below create an installable SDK from a checkout or

@@ -1,6 +1,6 @@
 # KineTexture staging source instructions
 
-This is a standalone source-only repository on local branch `main`. Its 80-file
+This is a standalone source-only repository on local branch `main`. Its original 80-file
 reviewed payload and scoped maintenance are recorded in STAGING_SOURCE_HASHES.json.
 Read STAGING.md before changing the staged package. Build with MSVC on Windows;
 keep builds, SDKs, test output and temporary assets under ignored build paths or
@@ -22,3 +22,9 @@ game installation, model weights, real clips or Python numerical packages for
 native build/consumption. Python's standard library is used by development tests
 and the source-manifest checker. No deployment or remote publishing is performed
 by the build commands. Keep local changes reviewable with explicit Git commits.
+
+The current documentation repair uses the separate 80-file projection in
+`tools/kinetexture_release/maintained_docs_repair_manifest_20261104.json`.
+The Chinese README is frozen separately as staging metadata outside that fixed payload.
+Numerical/build/test source is unchanged.
+Use the current command in STAGING.md; preserve all earlier manifests and receipts.

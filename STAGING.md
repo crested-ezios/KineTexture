@@ -22,7 +22,7 @@ projection uses the separate manifest
 `tools/kinetexture_release/maintained_docs_manifest_20261101.json`; the original
 manifest and receipt above remain byte-for-byte historical evidence.
 
-The current source projection additionally includes the VMD interpolation fix
+The 2026-11-04 source-maintenance projection additionally includes the VMD interpolation fix
 from source commit `2ee74ce5e28ae235a78fe0527c9cbe01cc34e163`: only the writer and
 its two synthetic tests were selected. The CLI guide explains the corrected
 interpolation; the scoped source review records the selection. No research
@@ -34,10 +34,10 @@ The copied manifest is intentionally outside the original 80-file payload at
 `tools/kinetexture_release/reviewed_preview_manifest.json`. The original receipt
 describes the exact exported package; this Git repository additionally contains
 Git metadata and the explicitly recorded staging files. Validate its frozen
-current source projection from this repository root with:
+current documentation-maintained projection from this repository root with:
 
 ```powershell
-python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_source_manifest_20261104.json --check
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_unified_manifest_20261107.json --check
 ```
 
 That read-only command needs no neighboring development checkout. Do not apply
@@ -74,3 +74,25 @@ See the README and channel semantics for API contracts and limits.
 only this new repository's local `core.autocrlf=false` is set. Build output is
 ignored. Public release, remote setup and asset rights remain separate from this
 local staging operation. No build result establishes in-game visual fidelity.
+
+## Documentation repair on 2026-11-04
+
+The current 80-file projection uses
+`tools/kinetexture_release/maintained_docs_repair_manifest_20261104.json`.
+It retains the earlier numerical, exporter, build and test source, updates the
+README and its generated installed copy. README.zh-CN.md is frozen separately
+as staging metadata outside the fixed preview payload. The release
+guide and this provenance guide identify the new manifest explicitly. All earlier
+source manifests and release receipts remain unchanged historical records.
+This documentation repair does not add a runtime build or game acceptance claim.
+
+## Public documentation unification on 2026-11-07
+
+The current documentation projection is
+`tools/kinetexture_release/maintained_docs_unified_manifest_20261107.json`.
+It clarifies that KineTexture is an offline SDK/tool set rather than a game
+plugin and synchronizes public documentation with the development checkout.
+The generated installed README was refreshed through `tools/check_docs.py`.
+The earlier manifests and receipts remain unchanged; no numerical or build
+source was changed. The seven-document synchronization list and original
+development documents are retained in the workspace documentation-review record.

@@ -201,3 +201,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Documentation repair on 2026-11-04
+
+The user authorized README corrections against current code and a refreshed local
+freeze. The new `maintained_docs_repair_manifest_20261104.json` retains the prior
+80-file source projection. The Chinese README is frozen separately as staging
+metadata outside the fixed preview payload. Changed payload files are
+documentation only: root README, generated installed README, release guide and
+this provenance guide. Earlier manifests, original receipts, algorithms, tests,
+parameters and licenses remain unchanged. Technical statements were checked
+against the staged code; humanizer-zh was used to preserve conditions and
+verification limits while editing. This review grants no new distribution
+rights and does not constitute game or visual acceptance.

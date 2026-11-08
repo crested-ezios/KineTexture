@@ -391,11 +391,23 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "ffb6dbaa8d64d8d89ef16af27a8c1140a406cf2a4e3de2701f7e9489e38a7c23"
+      "sha256": "143f5ea96c9233e2f740bee784d444b3bf8f0ba34cfbef3398950c862f3fd0c7",
+      "history": [
+        {
+          "date": "2026-11-04",
+          "sha256": "ffb6dbaa8d64d8d89ef16af27a8c1140a406cf2a4e3de2701f7e9489e38a7c23"
+        }
+      ]
     },
     {
       "path": "STAGING.md",
-      "sha256": "1e04de9797713d1115e9206c1f16549589cb5c1d7d9ceccd535ebb18cca01984"
+      "sha256": "4fb83ffa285cbdd6e67404a447547ce15900b1445bdec8eee7ad09ff6fc342b6",
+      "history": [
+        {
+          "date": "2026-11-04",
+          "sha256": "1e04de9797713d1115e9206c1f16549589cb5c1d7d9ceccd535ebb18cca01984"
+        }
+      ]
     },
     {
       "path": "docs/SDK_FIRST_USE_20261101.md",
@@ -412,6 +424,14 @@
     {
       "path": "VALIDATION_20261104.md",
       "sha256": "544038d24cbec269063a75e2f1240f8a849ea2dca79aa25129a6db1d336db636"
+    },
+    {
+      "path": "tools/kinetexture_release/maintained_docs_repair_manifest_20261104.json",
+      "sha256": "1903dc132dfa42bb58fa45ea257ef582b9b7c231dcdb485515d75a8d45b94221"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "sha256": "8e6e5f3b14196f149253f391c03604f4e592c6df371aa64a95ea28ac2d174452"
     }
   ],
   "source_maintenance": {
@@ -441,5 +461,32 @@
       "later offline analysis/fairing commits",
       "real assets or fitted profiles"
     ]
+  },
+  "documentation_repair_20261104": {
+    "date": "2026-11-04",
+    "base_staging_commit": "5135d53750bc8a8b3883e4115c7e90918301ccc8",
+    "previous_manifest_sha256": "5b1c4c7b392d4f64838e39c954e4d51ebadafcf60b0c021974778f3493ac0ff9",
+    "scope": "Authorized README/documentation corrections and humanizer-zh review against this staged code; no runtime, test, algorithm, parameter or vendor changes.",
+    "runtime_rebuilt": false,
+    "game_acceptance_added": false,
+    "remote_updated": false,
+    "active_manifest": "tools/kinetexture_release/maintained_docs_repair_manifest_20261104.json",
+    "active_manifest_sha256": "1903dc132dfa42bb58fa45ea257ef582b9b7c231dcdb485515d75a8d45b94221",
+    "documentation_payload_commit": "0aff3ee4bb57ed399a076cc43f1fb899e9dab39e",
+    "changed_payload_documents": [
+      "README.md",
+      "docs/SOURCE_PROVENANCE_REVIEW_20261101.md",
+      "src/KineTexture/README.md",
+      "tools/kinetexture_release/README.md"
+    ],
+    "fixed_payload_count": 80,
+    "additional_documentation": [
+      {
+        "path": "README.zh-CN.md",
+        "sha256": "8e6e5f3b14196f149253f391c03604f4e592c6df371aa64a95ea28ac2d174452"
+      }
+    ],
+    "historical_manifests_preserved": true,
+    "original_receipt_preserved": true
   }
 }

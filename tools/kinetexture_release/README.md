@@ -81,7 +81,7 @@ complete supplied manifest and its SHA256; archive that digest independently.
 
 The original `reviewed_preview_manifest.json` remains the frozen historical
 record. The earlier maintained SDK/CLI documentation remains recorded in
-`maintained_docs_manifest_20261101.json`. The current projection uses
+`maintained_docs_manifest_20261101.json`. The source-maintenance projection uses
 `maintained_source_manifest_20261104.json`, which additionally records the scoped
 VMD interpolation fix and its two synthetic tests. Earlier manifests correctly
 reject the maintained bytes rather than silently updating their recorded hashes.
@@ -90,8 +90,8 @@ Run these commands from the repository root. A new output label is required for
 each candidate:
 
 ```powershell
-python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_source_manifest_20261104.json --check
-python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_source_manifest_20261104.json --output build/reviewed-source-preview
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_repair_manifest_20261104.json --check
+python tools/kinetexture_release/prepare_preview.py --manifest tools/kinetexture_release/maintained_docs_repair_manifest_20261104.json --output build/reviewed-source-preview
 python -m unittest discover -s tools/kinetexture_release/tests -p test_preview_manifest.py -v
 ```
 
@@ -106,3 +106,9 @@ by an authorized agent. The review record must identify the actual reviewer and
 evidence; these rules do not require a separate manual approval for each local
 file. Public distribution remains a separate owner decision. See
 [preview review scope](REVIEW_NOTICE.md) for exclusions and historical references.
+
+The current documentation repair uses
+`maintained_docs_repair_manifest_20261104.json`: an 80-file projection with
+corrected root/installed READMEs and current manifest guides. The Chinese README
+is frozen separately as staging metadata outside the fixed preview payload.
+The earlier source manifest and all previous receipts remain unchanged.
